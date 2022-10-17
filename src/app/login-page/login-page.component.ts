@@ -1,21 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { login } from './actions/user.action';
-import { currentUser } from './selectors';
-import { LoginCredential } from './login-form/login-form.component';
-import { AuthenticationService } from './services/authentication.service';
+import { login } from '../actions/user.action';
+import { currentUser } from '../selectors';
+import { LoginCredential } from '../login-form/login-form.component';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-login-page',
+  templateUrl: './login-page.component.html',
+  styleUrls: ['./login-page.component.css']
 })
-export class AppComponent {
+export class LoginPageComponent implements OnInit {
   constructor (private authSvc: AuthenticationService, private store: Store) {}
 
-  title = 'manulife-fe-test';
-
-  isLoggedIn$ = this.store.select(currentUser);
+  ngOnInit(): void {
+  }
 
   loginUser(param: LoginCredential) {
     this.authSvc.login(param)

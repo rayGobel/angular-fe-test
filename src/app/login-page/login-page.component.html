@@ -1,0 +1,25 @@
+<div class="content grid grid-cols-12 gap-8" role="main">
+  <section class="main-content flex flex-col gap-y-8 pl-36 py-8 col-span-8 w-full">
+    <h1 class="text-5xl font-medium font-sans">Halaman masuk</h1>
+
+    <app-login-form (loginSubmitEvent)="loginUser($event)"></app-login-form>
+
+    <hr class="my-8 h-px bg-gray-400 border-2 dark:bg-gray-700 w-7/12">
+
+    <div class="flex flex-col w-7/12">
+      <button
+        class="hover:transition-colors hover:duration-300 hover:bg-orange-600 hover:text-slate-50 border-2 border-orange-600 text-slate-600 text-lg font-semibold leading-6 py-5 px-7"
+        data-testid="app-login__submit-btn"
+        type="submit"
+      >
+        Registrasi Akun
+      </button>
+    </div>
+  </section>
+  <section class="side col-span-4">
+    <div class="h-screen w-fit">
+      <img class="h-full w-full object-cover" src="assets/banner.png">
+    </div>
+  </section>
+</div>
+
