@@ -4,6 +4,7 @@ import { login } from '../actions/user.action';
 import { currentUser } from '../selectors';
 import { LoginCredential } from '../login-form/login-form.component';
 import { AuthenticationService } from '../services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -11,7 +12,7 @@ import { AuthenticationService } from '../services/authentication.service';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-  constructor (private authSvc: AuthenticationService, private store: Store) {}
+  constructor (private authSvc: AuthenticationService, private store: Store, private router: Router) {}
 
   ngOnInit(): void {
   }
@@ -29,9 +30,11 @@ export class LoginPageComponent implements OnInit {
           name: response.userId
         };
 
-        console.log({ user });
-
         this.store.dispatch(login({ user }));
       })
+  }
+
+  goToRegisterPage() {
+    this.router.navigate(['/register']);
   }
 }

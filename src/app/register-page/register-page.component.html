@@ -1,1 +1,14 @@
-<p>register-page works!</p>
+<div class="content grid grid-cols-12 gap-8" role="main">
+  <section class="main-content flex flex-col gap-y-8 pl-36 py-8 col-span-8 w-full">
+    <h1 class="text-5xl font-medium font-sans">Registrasi</h1>
+
+    <app-register-component (onCancelRegister)="goToLoginPage()"></app-register-component>
+
+  </section>
+  <section class="side col-span-4">
+    <div class="h-screen w-fit">
+      <img class="h-full w-full object-cover" src="assets/banner.png">
+    </div>
+  </section>
+</div>
+

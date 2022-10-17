@@ -10,13 +10,15 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers, userReducers } from './reducers';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { RegisterComponentComponent } from './register-component/register-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     LoginPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    RegisterComponentComponent
   ],
   imports: [
     BrowserModule,
